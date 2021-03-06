@@ -1,9 +1,9 @@
 """Routes for user authentication."""
 from flask import Blueprint, redirect, render_template, flash, request, session, url_for
-from flask_login = login_required, logout_user, current_user, login_user
+from flask_login import login_required, logout_user, current_user, login_user
 from .forms import LoginForm, SignupForm
 from .models import db, User
-form . import login_manager
+from . import login_manager
 
 
 # Blueprint configuration
@@ -74,7 +74,7 @@ def singup():
             # login the new user
             login_user(user)
             return redirect(url_for('main_bp.dashboard'))
-        flask('A user already exists with that email address.'))
+        flask('A user already exists with that email address.')
     return render_template(
         'signup.jinja2',
         title='create an account',
@@ -91,7 +91,7 @@ def load_user(user_id):
         return User.query.get(user_id)
     return None
 
-@login_manager_unauthorized_handler
+@login_manager.unauthorized_handler
 def unauthorized():
     """Redirect unauthorized users to Login page."""
     flash('You must be logged in to view that page.')

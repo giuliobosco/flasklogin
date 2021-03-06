@@ -21,6 +21,7 @@ class SignupForm(FlaskForm):
             Length(min=6),
             Email(message='Enter a valid email.'),
             DataRequired()
+        ]
     )
     password = PasswordField(
         'Password',
@@ -49,9 +50,9 @@ class LoginForm(FlaskForm):
         'Email',
         validators=[
             DataRequired(),
-            Email(message='Enter a valid email'.)
+            Email(message='Enter a valid email.')
         ]
     )
-    password = PasswordField('Password', validators=[DaraRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Log in')
 
