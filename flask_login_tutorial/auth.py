@@ -48,14 +48,14 @@ def login():
 
 
 @auth_bp.route('/signup', methods=['GET', 'POST'])
-def singup():
+def signup():
     """
     User sign-up page.
 
     GET request serve sign-up page.
     POST requests validate form & user creation.
     """
-    form = SingupForm()
+    form = SignupForm()
     if form.validate_on_submit():
         # check if user already exists
         existing_user = User.query.filter_by(email=form.email.data).first()
@@ -79,8 +79,8 @@ def singup():
         'signup.jinja2',
         title='create an account',
         form=form,
-        template='singup-page',
-        body='Sing up for a user account.'
+        template='signup-page',
+        body='Sign up for a user account.'
     )
 
 
