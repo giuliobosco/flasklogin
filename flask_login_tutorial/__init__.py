@@ -21,17 +21,17 @@ def create_app():
     with app.app_context():
         from . import routes
         from . import auth
-        from .assets import compile_assets
+        from .assets import compile_static_assets
 
         # Register Blueprints
         app.register_blueprint(routes.main_bp)
-        app.register_blueprint(auth.main_bp)
+        app.register_blueprint(auth.auth_bp)
 
         # create database models
         db.create_all()
 
         # compile static assets
         if app.config['FLASK_ENV'] == 'development':
-            compile_assets(app)
+            compile_static_assets(app)
 
     return app
