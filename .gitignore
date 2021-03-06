@@ -1,0 +1,23 @@
+# Visual Studio code
+.idea/
+.vscode/
+
+# docker
+.devcontainer
+
+# python
+__pycache__/
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# uwsgi
+uwsgi.ini
+
+# Supervisor 
+supervisord.pid
+
+
+
+
