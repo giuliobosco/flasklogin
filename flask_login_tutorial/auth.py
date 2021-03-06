@@ -25,7 +25,7 @@ def login():
     POST requests validate and redirect user to dashboard.
     """
     # if user already authenticated bypass
-    if current_user.is_autheticated:
+    if current_user.is_authenticated:
         return redirect(url_for('main_bp.dashboard'))
 
     form = LoginForm()
