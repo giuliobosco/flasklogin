@@ -74,7 +74,7 @@ def signup():
             # login the new user
             login_user(user)
             return redirect(url_for('main_bp.dashboard'))
-        flask('A user already exists with that email address.')
+        flash('A user already exists with that email address.')
     return render_template(
         'signup.jinja2',
         title='create an account',
