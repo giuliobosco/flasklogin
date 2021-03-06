@@ -3,11 +3,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_wtf.csrf import CsrfProtect
+from flask_wtf.csrf import CSRFProtect
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-csrf = CsrfProtect()
+csrf = CSRFProtect()
 
 def create_app():
     """Construct the core app object."""
